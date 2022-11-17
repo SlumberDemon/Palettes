@@ -1,2 +1,2 @@
-# Pallets
+# Palletes
 🎨 Color creativity 

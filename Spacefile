@@ -1,0 +1,9 @@
+v: 1
+icon: ./static/images/discovery.png
+micros:
+- name: palletes
+  src: .
+  engine: python3.9
+  public_routes:
+    - "/pallete/*" 
+    - "/static/*"
