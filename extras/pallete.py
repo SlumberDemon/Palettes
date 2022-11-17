@@ -8,7 +8,7 @@ def random_color():
     return return_color
 
 
-def create_pallet(colors, size):
+def create_palette(colors: list, size):
     palette_list = []
 
     inverse = [
@@ -30,9 +30,12 @@ def create_pallet(colors, size):
     return palette_list
 
 
-def rgb_to_hex(rgb):
-    return "%02x%02x%02x" % rgb
+def rgb_to_hex(colors: list):
+    return "%02x%02x%02x" % colors
 
 
-for i in create_complimentary(random_color(), 5):
-    print(i)
+def hex_palette():
+    colors = []
+    for i in create_palette(random_color(), 5):
+        colors.append(f"#{rgb_to_hex((i[0], i[1], i[2]))}")
+    return colors

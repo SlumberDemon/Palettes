@@ -2,7 +2,7 @@
 
 @media only screen and (max-width: 600px) {
     .menu-text {
-        margin-right: 100px;
+        margin-right: 80px;
     }
     
     .menu-bar.favorites > * {
@@ -32,7 +32,7 @@
   
 @media only screen and (min-width: 600px) {
     .menu-text {
-        margin-right: 280px;
+        margin-right: 260px;
     }
     
     .menu-bar.favorites > * {
@@ -62,7 +62,7 @@
   
 @media only screen and (min-width: 768px) {
     .menu-text {
-        margin-right: 450px;
+        margin-right: 460px;
     }
     
     .menu-bar.favorites > * {
@@ -85,13 +85,13 @@
         padding: 50px 30px;
     }
     .color-card {
-        padding: 150px 35px;
+        padding: 150px 30px;
     }
 } 
   
 @media only screen and (min-width: 992px) {
     .menu-text {
-        margin-right: 600px;
+        margin-right: 660px;
     }
     
     .menu-bar.favorites > * {
@@ -120,7 +120,7 @@
 
 @media only screen and (min-width: 1200px) {
     .menu-text {
-        margin-right: 680px;
+        margin-right: 660px;
     }
     
     .menu-bar.favorites > * {

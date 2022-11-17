@@ -1,5 +1,6 @@
 import fastapi
 from deta import Base
+from extras.pallete import hex_palette
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, FileResponse
@@ -19,9 +20,10 @@ class NoCacheFileResponse(FileResponse):
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: fastapi.Request):
+    items = hex_palette()
     return pages.TemplateResponse(
         "index.html",
-        {"request": request},
+        {"request": request, "items": items},
     )
 
 
