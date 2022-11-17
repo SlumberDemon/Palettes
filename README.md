@@ -1,7 +1,7 @@
-# Palletes
+# Palettes 
 🎨 Color creativity 
 
 ## Features
-- Generate color palletes
-- Favorite palletes
-- Share palletes
+- Generate color palettes 
+- Favorite palettes 
+- Share palettes 

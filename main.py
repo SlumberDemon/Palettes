@@ -1,6 +1,6 @@
 import fastapi
 from deta import Base
-from extras.pallete import hex_palette
+from extras.palette import hex_palette
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, FileResponse
@@ -62,11 +62,11 @@ async def favorites_remove(id: str):
     return {"message": "success"}
 
 
-@app.get("/pallete/{id}")
+@app.get("/palette/{id}")
 async def pallete_page(request: fastapi.Request, id: str):
     item = favorites.get(id)
     return pages.TemplateResponse(
-        "pallete.html",
+        "palette.html",
         {"request": request, "item": item},
     )
 

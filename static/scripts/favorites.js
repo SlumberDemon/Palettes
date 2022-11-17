@@ -43,7 +43,7 @@ for (let button of deleteButtons) {
 
 for (let button of shareButtons) {
     button.addEventListener("click", () => {
-        let url = `${window.location.origin}/pallete/${button.id}`
+        let url = `${window.location.origin}/palette/${button.id}`
         navigator.clipboard.writeText(url)
         button.style.background="#353535"
         setTimeout(() => {

@@ -22,6 +22,6 @@ for (let card of colorCards) {
 // Buttons
 
 infoButton.addEventListener("click", () => {
-    window.location.href = `https://palletes.deta.dev`
+    window.location.href = `https://palettes.deta.dev`
 
 })
