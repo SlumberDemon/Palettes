@@ -3,7 +3,7 @@ title: "Palettes"
 tagline: "Color creativity"
 theme_color: "#303B7A"
 git: "https://github.com/SlumberDemon/Palettes"
-homepage: "https://palletes.deta.dev"
+homepage: "https://palettes.deta.dev"
 ---
 
 ## Features
