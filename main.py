@@ -66,7 +66,7 @@ async def favorites_remove(id: str):
 async def pallete_page(request: fastapi.Request, id: str):
     item = favorites.get(id)
     return pages.TemplateResponse(
-        "pallet.html",
+        "pallete.html",
         {"request": request, "item": item},
     )
 

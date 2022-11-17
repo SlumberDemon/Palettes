@@ -124,12 +124,12 @@
     }
     
     .menu-bar.favorites > * {
-        margin-right: 360px;
-        margin-left: 360px;
+        margin-right: 350px;
+        margin-left: 345px;
     }
     
     .menu-bar.card {
-        margin-left: 850px;
+        margin-left: 820px;
     }
     
     .menu-bar.pallete > * {

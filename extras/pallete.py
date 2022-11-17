@@ -1,10 +1,16 @@
-import random
+from random import randbytes
+
+
+def hex_to_rgb(hexa):
+    return [int(hexa[i : i + 2], 16) for i in (0, 2, 4)]
+
+
+def rgb_to_hex(colors: list):
+    return "%02x%02x%02x" % colors
 
 
 def random_color():
-    return_color = []
-    for i in range(3):
-        return_color.append(random.randint(0, 255))
+    return_color = hex_to_rgb(randbytes(3).hex())
     return return_color
 
 
@@ -28,10 +34,6 @@ def create_palette(colors: list, size):
             ]
             palette_list.append(cell)
     return palette_list
-
-
-def rgb_to_hex(colors: list):
-    return "%02x%02x%02x" % colors
 
 
 def hex_palette():
