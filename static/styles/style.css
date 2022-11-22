@@ -2,21 +2,24 @@
 
 @media only screen and (max-width: 600px) {
     .menu-text {
-        margin-right: 80px;
+        margin-right: 60px;
     }
-    
     .menu-bar.favorites > * {
         margin-right: 75px;
         margin-left: 70px;
     }
-    
     .menu-bar.card {
-        margin-left: 270px;
+        margin-left: 210px;
     }
-    
     .menu-bar.pallete > * {
-        margin-right: 30px;
-        margin-left: 30px;
+        margin-right: -0px;
+        margin-left: 10px;
+    }
+    .menu-bar.secondary {
+        margin-right: 160px;
+    }
+    .menu-bar.card.fav {
+        margin-left: 300px;
     }
     .color-grid {
         grid-template-columns: auto;
@@ -32,21 +35,24 @@
   
 @media only screen and (min-width: 600px) {
     .menu-text {
-        margin-right: 260px;
+        margin-right: 220px;
     }
-    
     .menu-bar.favorites > * {
         margin-right: 165px;
         margin-left: 160px;
     }
-    
     .menu-bar.card {
         margin-left: 450px;
     }
-    
     .menu-bar.pallete > * {
-        margin-right: 125px;
-        margin-left: 120px;
+        margin-right: 80px;
+        margin-left: 75px;
+    }
+    .menu-bar.secondary {
+        margin-right: 160px;
+    }
+    .menu-bar.card.fav {
+        margin-left: 470px;
     }
     .color-grid {
         grid-template-columns: auto auto auto auto auto;
@@ -58,25 +64,31 @@
         padding: 100px 10px;
         font-size: 20px;
     }
+    .url-input {
+        width: 475px;
+    }
 } 
   
 @media only screen and (min-width: 768px) {
     .menu-text {
-        margin-right: 460px;
+        margin-right: 420px;
     }
-    
     .menu-bar.favorites > * {
         margin-right: 225px;
         margin-left: 220px;
     }
-    
     .menu-bar.card {
         margin-left: 570px;
     }
-    
     .menu-bar.pallete > * {
-        margin-right: 200px;
-        margin-left: 195px;
+        margin-right: 180px;
+        margin-left: 175px;
+    }
+    .menu-bar.secondary {
+        margin-right: 160px;
+    }
+    .menu-bar.card.fav {
+        margin-left: 670px;
     }
     .color-grid {
         grid-template-columns: auto auto auto auto auto;
@@ -87,25 +99,31 @@
     .color-card {
         padding: 150px 30px;
     }
+    .url-input {
+        width: 675px;
+    }
 } 
   
 @media only screen and (min-width: 992px) {
     .menu-text {
-        margin-right: 660px;
+        margin-right: 620px;
     }
-    
     .menu-bar.favorites > * {
         margin-right: 325px;
         margin-left: 320px;
     }
-    
     .menu-bar.card {
         margin-left: 770px;
     }
-    
     .menu-bar.pallete > * {
         margin-right: 280px;
         margin-left: 275px;
+    }
+    .menu-bar.secondary {
+        margin-right: 170px;
+    }
+    .menu-bar.card.fav {
+        margin-left: 870px;
     }
     .color-grid {
         grid-template-columns: auto auto auto auto auto;
@@ -115,6 +133,9 @@
     }
     .color-card {
         padding: 150px 50px;
+    }
+    .url-input {
+        width: 875px;
     }
 } 
 
@@ -122,19 +143,22 @@
     .menu-text {
         margin-right: 620px;
     }
-    
     .menu-bar.favorites > * {
         margin-right: 350px;
         margin-left: 345px;
     }
-    
     .menu-bar.card {
-        margin-left: 820px;
+        margin-left: 780px;
     }
-    
     .menu-bar.pallete > * {
-        margin-right: 320px;
-        margin-left: 320px;
+        margin-right: 280px;
+        margin-left: 275px;
+    }
+    .menu-bar.secondary {
+        margin-right: 160px;
+    }
+    .menu-bar.card.fav {
+        margin-left: 870px;
     }
     .color-grid {
         grid-template-columns: auto auto auto auto auto;
@@ -144,6 +168,18 @@
     }
     .color-card {
         padding: 150px 50px;
+    }
+    .url-input {
+        width: 875px;
+    }
+    .fav-grid {
+        grid-template-columns: auto auto auto !important;
+        display: grid;
+        scale: 55%;
+    }
+    
+    .fav-item {
+        margin: 5px;
     }
 }
 
@@ -152,7 +188,6 @@
 body {
     font-family: "Open Sans", sans-serif;
     background-color: #1C1B1B;
-	/* background-image: linear-gradient(90deg, #2F3B7B, #655A88, #F4CAB2, #F28F6B, #D95F5F); */
     flex-direction: column;
     align-items: center;
     color: #FFFF;
@@ -177,6 +212,11 @@ body {
     padding: 2px 4px;
     cursor: pointer;
     margin: 2px;
+}
+
+.menu-buttons {
+    flex-direction: row;
+    display: flex;
 }
 
 .menu-option:hover {
@@ -206,4 +246,23 @@ body {
 .color-card:hover {
     transition: 2s;
     opacity: 50%;
+}
+
+/* Palette */
+
+.url-input {
+    background-color: #1C1B1B;
+    border: 2px solid #353535;
+    text-align: center;
+    border-radius: 8px;
+    padding: 2px 4px;
+    font-size: 25px;
+    transition: 2s;
+    color: #FFFF;
+}
+
+.url-input:focus {
+    border-color: #FFFF;
+    transition: 2s;
+    outline:none;
 }

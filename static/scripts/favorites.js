@@ -1,6 +1,7 @@
 let colorCards = document.getElementsByClassName("color-card");
 let deleteButtons = document.getElementsByClassName("delete");
 let shareButtons = document.getElementsByClassName("share")
+let apiButtons = document.getElementsByClassName("api");
 let homeButton = document.getElementById("home");
 
 // Color Card
@@ -44,6 +45,17 @@ for (let button of deleteButtons) {
 for (let button of shareButtons) {
     button.addEventListener("click", () => {
         let url = `${window.location.origin}/palette/${button.id}`
+        navigator.clipboard.writeText(url)
+        button.style.background="#353535"
+        setTimeout(() => {
+            button.style.background="transparent"
+        }, 800)
+    })
+}
+
+for (let button of apiButtons) {
+    button.addEventListener("click", () => {
+        let url = `${window.location.origin}/api/palette/${button.id}`
         navigator.clipboard.writeText(url)
         button.style.background="#353535"
         setTimeout(() => {

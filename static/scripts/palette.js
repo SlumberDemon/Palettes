@@ -1,4 +1,5 @@
 let colorCards = document.getElementsByClassName("color-card");
+let apiButtons = document.getElementsByClassName("api");
 let infoButton = document.getElementById("info");
 
 // Color Card
@@ -25,3 +26,14 @@ infoButton.addEventListener("click", () => {
     window.location.href = `https://palettes.deta.dev`
 
 })
+
+for (let button of apiButtons) {
+    button.addEventListener("click", () => {
+        let url = `${window.location.origin}/api/palette/${button.id}`
+        navigator.clipboard.writeText(url)
+        button.style.background="#353535"
+        setTimeout(() => {
+            button.style.background="transparent"
+        }, 800)
+    })
+}

@@ -1,6 +1,6 @@
 import fastapi
 from deta import Base
-from extras.palette import hex_palette
+from extras.palette import palette_main
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, FileResponse
@@ -20,7 +20,7 @@ class NoCacheFileResponse(FileResponse):
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: fastapi.Request):
-    items = hex_palette()
+    items = palette_main()
     return pages.TemplateResponse(
         "index.html",
         {"request": request, "items": items},
@@ -63,12 +63,18 @@ async def favorites_remove(id: str):
 
 
 @app.get("/palette/{id}")
-async def pallete_page(request: fastapi.Request, id: str):
+async def palette_page(request: fastapi.Request, id: str):
     item = favorites.get(id)
     return pages.TemplateResponse(
         "palette.html",
         {"request": request, "item": item},
     )
+
+
+@app.get("/api/palette/{id}")
+async def palette_api(id: str):
+    item = favorites.get(id)
+    return item
 
 
 @app.get("/static/{path:path}")

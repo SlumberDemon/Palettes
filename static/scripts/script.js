@@ -1,7 +1,10 @@
 let colorCards = document.getElementsByClassName("color-card");
+let urlInput = document.getElementById("palette-image-url");
+let urlCards = document.getElementsByClassName("text-card");
 let favoritesButton = document.getElementById("favorites");
 let favoriteButton = document.getElementById("favorite");
 let refreshButton = document.getElementById("refresh");
+let favButton = document.getElementById("fav-create");
 
 // Color Card
 
@@ -35,3 +38,34 @@ favoritesButton.addEventListener("click", () => {
 refreshButton.addEventListener("click", () => {
     location.reload()
 })
+
+favButton.addEventListener("click", () => {
+    fetch(`/favorites?color1=${urlCards[0].id.replace("#", "")}&color2=${urlCards[1].id.replace("#", "")}&color3=${urlCards[2].id.replace("#", "")}&color4=${urlCards[3].id.replace("#", "")}&color5=${urlCards[4].id.replace("#", "")}`, { method: "POST" })
+    favButton.style.background="#353535"
+})
+
+
+// Inputs
+
+urlInput.addEventListener("keypress", async (event) => {
+    let title = document.getElementById("menu-title-sec")
+    var num = 0
+    if (event.key === "Enter") {
+        title.innerHTML = `...`
+        try {
+            let resp  = await fetch(`https://palettes.deta.dev/text/palette?text=${urlInput.value}`)
+            let data = await resp.json()
+            for (card of urlCards) {
+                card.innerHTML = data.colors[num]
+                card.style.background = data.colors[num]
+                card.id = data.colors[num]
+                num = num + 1
+            }
+            title.innerHTML = `Create`
+        }
+        catch {
+            title.innerHTML = `Error`
+        }
+    }
+})
+
