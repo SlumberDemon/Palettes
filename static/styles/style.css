@@ -253,11 +253,11 @@ body {
 .url-input {
     background-color: #1C1B1B;
     border: 2px solid #353535;
+    animation: fadeIn 2s;
     text-align: center;
     border-radius: 8px;
     padding: 2px 4px;
     font-size: 25px;
-    transition: 2s;
     color: #FFFF;
 }
 
@@ -266,3 +266,10 @@ body {
     transition: 2s;
     outline:none;
 }
+
+/* Animations */
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
