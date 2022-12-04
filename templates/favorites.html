@@ -37,9 +37,15 @@
                 </div>
             </div>
             <div class="menu-bar card">
-                <div id="{{ item['key'] }}" class="menu-option share"><i data-feather="share-2"></i></div>
-                <div id="{{ item['key'] }}" class="menu-option api"><i data-feather="code"></i></div>
-                <div id="{{ item['key'] }}" class="menu-option delete"><i data-feather="trash-2"></i></div>
+                <div id="{{ item['key'] }}" class="menu-option share"><i data-feather="share-2"></i>
+                    <span class="tip">Copy link</span>
+                </div>
+                <div id="{{ item['key'] }}" class="menu-option api"><i data-feather="code"></i>
+                    <span class="tip">Copy api link</span>
+                </div>
+                <div id="{{ item['key'] }}" class="menu-option delete"><i data-feather="trash-2"></i>
+                    <span class="tip">Delete palette</span>
+                </div>
             </div>
         </div>
         {% endfor %}

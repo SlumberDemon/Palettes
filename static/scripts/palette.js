@@ -31,7 +31,7 @@ for (let button of apiButtons) {
     button.addEventListener("click", () => {
         let url = `${window.location.origin}/api/palette/${button.id}`
         navigator.clipboard.writeText(url)
-        button.style.background="#353535"
+        button.style.background="linear-gradient(#2E3C7B, #665B8A)";
         setTimeout(() => {
             button.style.background="transparent"
         }, 800)

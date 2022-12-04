@@ -13,9 +13,15 @@
 <body>
     <div class="menu-bar">
         <div class="menu-text">Palettes</div>
-        <div id="refresh" class="menu-option"><i data-feather="refresh-cw"></i></div>
-        <div id="favorite" class="menu-option"><i data-feather="star"></i></div>
-        <div id="favorites" class="menu-option"><i data-feather="book"></i></div>
+        <div id="refresh" class="menu-option"><i data-feather="refresh-cw"></i>
+            <span class="tip">Generate new</span>
+        </div>
+        <div id="favorite" class="menu-option"><i data-feather="star"></i>
+            <span class="tip">Favorite palette</span>
+        </div>
+        <div id="favorites" class="menu-option"><i data-feather="book"></i>
+            <span class="tip">Saved palettes</span>
+        </div>
         <!-- <div id="settings" class="menu-option"><i data-feather="settings"></i></div> -->
     </div>
     <div class="color-grid">
@@ -38,7 +44,7 @@
     <div class="menu-bar secondary">
         <div id="menu-title-sec" class="menu-text secondary">Create</div>
     </div>
-    <input id="palette-image-url" class="url-input" type="text" placeholder="Text to palette" autocomplete="off">
+    <input id="palette-text" class="url-input" type="text" placeholder="Text to palette" autocomplete="off">
     <div class="color-grid" style="margin-top: 10px !important;">
         <div class="color-card text-card">
             #000000
@@ -57,10 +63,11 @@
         </div>
     </div>
     <div class="menu-bar card fav">
-        <div id="fav-create" class="menu-option"><i data-feather="star"></i></div>
+        <div id="fav-create" class="menu-option"><i data-feather="star"></i>
+            <span class="tip">Favorite palette</span>
+        </div>
     </div>
 </body>
-
 <script src="/static/scripts/script.js"></script>
 <script src="/static/scripts/feather.js"></script>
 <script>

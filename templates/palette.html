@@ -14,8 +14,12 @@
     <div class="menu-bar pallete">
         <div class="menu-text">{{ item['key'] }}</div>
         <div class="menu-buttons">
-            <div id="info" class="menu-option"><i data-feather="info"></i></div>
-            <div id="{{ item['key'] }}" class="menu-option api"><i data-feather="code"></i></div>
+            <div id="info" class="menu-option"><i data-feather="info"></i>
+                <span class="tip">Download app</span>
+            </div>
+            <div id="{{ item['key'] }}" class="menu-option api"><i data-feather="code"></i>
+                <span class="tip">Copy api link</span>
+            </div>
         </div>
     </div>
     <div id="{{ item['key'] }}" class="color-grid pallete">

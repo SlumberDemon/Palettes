@@ -174,10 +174,10 @@
     }
     .fav-grid {
         grid-template-columns: auto auto auto !important;
+        margin-top: -430px;
         display: grid;
         scale: 55%;
     }
-    
     .fav-item {
         margin: 5px;
     }
@@ -272,4 +272,32 @@ body {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
-  }
+}
+
+/* Tooltip */
+
+.menu-option {
+    display: inline-block;
+    position: relative;
+}
+
+.menu-option .tip {
+    background-color: #353535;
+    backdrop-filter: blur(10px);
+    margin-left: -60px;
+    position: absolute;
+    border-radius: 6px;
+    visibility: hidden;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px 0;
+    color: #fff;
+    width: 120px;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+}
+  
+.menu-option:hover .tip {
+    visibility: visible;
+}
