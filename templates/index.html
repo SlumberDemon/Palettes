@@ -13,7 +13,7 @@
 <body>
     <div class="menu-bar">
         <div class="menu-text">Palettes</div>
-        <div id="refresh" class="menu-option"><i data-feather="refresh-cw"></i>
+        <div onclick="RefreshPalette()" class="menu-option"><i data-feather="refresh-cw"></i>
             <span class="tip">Generate new</span>
         </div>
         <div id="favorite" class="menu-option"><i data-feather="star"></i>
@@ -24,7 +24,7 @@
         </div>
         <!-- <div id="settings" class="menu-option"><i data-feather="settings"></i></div> -->
     </div>
-    <div class="color-grid">
+    <div id="PrimaryPalette" class="color-grid">
         <div id="{{ items[0] }}" class="color-card">
             {{ items[0] }}
         </div>

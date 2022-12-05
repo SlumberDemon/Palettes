@@ -3,7 +3,6 @@ let urlInput = document.getElementById("palette-text");
 let urlCards = document.getElementsByClassName("text-card");
 let favoritesButton = document.getElementById("favorites");
 let favoriteButton = document.getElementById("favorite");
-let refreshButton = document.getElementById("refresh");
 let favButton = document.getElementById("fav-create");
 
 // Color Card
@@ -29,15 +28,13 @@ for (let card of colorCards) {
 favoriteButton.addEventListener("click", () => {
     fetch(`/favorites?color1=${colorCards[0].id.replace("#", "")}&color2=${colorCards[1].id.replace("#", "")}&color3=${colorCards[2].id.replace("#", "")}&color4=${colorCards[3].id.replace("#", "")}&color5=${colorCards[4].id.replace("#", "")}`, { method: "POST" })
     favoriteButton.style.background="linear-gradient(#2E3C7B, #665B8A)";
+    favoriteButton.getElementsByTagName("svg")[0].style.fill = "white"
 })
 
 favoritesButton.addEventListener("click", () => {
     window.location.href = `/favorites`
 })
 
-refreshButton.addEventListener("click", () => {
-    location.reload()
-})
 
 favButton.addEventListener("click", () => {
     fetch(`/favorites?color1=${urlCards[0].id.replace("#", "")}&color2=${urlCards[1].id.replace("#", "")}&color3=${urlCards[2].id.replace("#", "")}&color4=${urlCards[3].id.replace("#", "")}&color5=${urlCards[4].id.replace("#", "")}`, { method: "POST" })
@@ -69,4 +66,25 @@ urlInput.addEventListener("keypress", async (event) => {
         }
     }
 })
+
+function GenerateHex(){
+    chars = '0123456789abcdef'
+    var c1 = ""
+    for(i = 0;i < 6;i++){
+        c1 = c1 + chars[Math.floor(Math.random()*16)]
+    }
+    return '#'+c1
+}
+function RefreshPalette(){
+    palette = document.getElementById("PrimaryPalette").getElementsByTagName('div')
+    console.log(palette)
+    for (let i = 0;i<palette.length;i++){
+        elem = palette[i]
+        console.log(elem)
+        ColorHex = GenerateHex()
+        elem.id = ColorHex
+        elem.style.background = ColorHex
+        elem.innerHTML = ColorHex
+    }
+}
 
