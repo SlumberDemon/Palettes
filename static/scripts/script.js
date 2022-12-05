@@ -77,10 +77,8 @@ function GenerateHex(){
 }
 function RefreshPalette(){
     palette = document.getElementById("PrimaryPalette").getElementsByTagName('div')
-    console.log(palette)
     for (let i = 0;i<palette.length;i++){
         elem = palette[i]
-        console.log(elem)
         ColorHex = GenerateHex()
         elem.id = ColorHex
         elem.style.background = ColorHex
