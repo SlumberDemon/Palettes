@@ -23,21 +23,11 @@
         </div>
     </div>
     <div id="{{ item['key'] }}" class="color-grid pallete">
-        <div id="{{ item['colors']['1'] }}" class="color-card pallete">
-            {{ item['colors']['1'] }}
+        {% for color in item['colors'].values() %}
+        <div id="{{ color }}" class="color-card pallete">
+            {{ color }}
         </div>
-        <div id="{{ item['colors']['2'] }}" class="color-card pallete">
-            {{ item['colors']['2'] }}
-        </div>
-        <div id="{{ item['colors']['3'] }}" class="color-card pallete">
-            {{ item['colors']['3'] }}
-        </div>
-        <div id="{{ item['colors']['4'] }}" class="color-card pallete">
-            {{ item['colors']['4'] }}
-        </div>
-        <div id="{{ item['colors']['5'] }}" class="color-card pallete">
-            {{ item['colors']['5'] }}
-        </div>
+        {% endfor %}
     </div>
 
 </body>

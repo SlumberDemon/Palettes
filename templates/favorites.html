@@ -20,21 +20,11 @@
         {% for item in items %}
         <div class="fav-item">
             <div id="{{ item['key'] }}" class="color-grid favorites">
-                <div id="{{ item['colors']['1'] }}" class="color-card favorites">
-                    {{ item['colors']['1'] }}
+                {% for color in item['colors'].values() %}
+                <div id="{{ color }}" class="color-card favorites">
+                    {{ color }}
                 </div>
-                <div id="{{ item['colors']['2'] }}" class="color-card favorites">
-                    {{ item['colors']['2'] }}
-                </div>
-                <div id="{{ item['colors']['3'] }}" class="color-card favorites">
-                    {{ item['colors']['3'] }}
-                </div>
-                <div id="{{ item['colors']['4'] }}" class="color-card favorites">
-                    {{ item['colors']['4'] }}
-                </div>
-                <div id="{{ item['colors']['5'] }}" class="color-card favorites">
-                    {{ item['colors']['5'] }}
-                </div>
+                {% endfor %}
             </div>
             <div class="menu-bar card">
                 <div id="{{ item['key'] }}" class="menu-option share"><i data-feather="share-2"></i>

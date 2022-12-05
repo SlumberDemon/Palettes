@@ -8,3 +8,5 @@ micros:
     - "/palette/*" 
     - "/static/*"
     - "/api/*"
+  presets:
+    api_keys: true

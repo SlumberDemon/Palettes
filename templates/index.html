@@ -24,28 +24,19 @@
         </div>
         <!-- <div id="settings" class="menu-option"><i data-feather="settings"></i></div> -->
     </div>
-    <div id="PrimaryPalette" class="color-grid">
-        <div id="{{ items[0] }}" class="color-card">
-            {{ items[0] }}
+    <div class="color-grid">
+        {% for color in items %}
+        <div id="{{ color }}" class="color-card">
+            {{ color }}
         </div>
-        <div id="{{ items[1] }}" class="color-card">
-            {{ items[1] }}
-        </div>
-        <div id="{{ items[2] }}" class="color-card">
-            {{ items[2] }}
-        </div>
-        <div id="{{ items[3] }}" class="color-card">
-            {{ items[3] }}
-        </div>
-        <div id="{{ items[4] }}" class="color-card">
-            {{ items[4] }}
-        </div>
+        {% endfor %}
+    </div>
     </div>
     <div class="menu-bar secondary">
         <div id="menu-title-sec" class="menu-text secondary">Create</div>
     </div>
     <input id="palette-text" class="url-input" type="text" placeholder="Text to palette" autocomplete="off">
-    <div class="color-grid" style="margin-top: 10px !important;">
+    <div id="color-text" class="color-grid" style="margin-top: 10px !important;">
         <div class="color-card text-card">
             #000000
         </div>
@@ -67,6 +58,7 @@
             <span class="tip">Favorite palette</span>
         </div>
     </div>
+    <!-- <input id="palette-image" class="url-input" type="text" placeholder="Image url to palette" autocomplete="off"> -->
 </body>
 <script src="/static/scripts/script.js"></script>
 <script src="/static/scripts/feather.js"></script>

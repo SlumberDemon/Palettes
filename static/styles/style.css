@@ -174,7 +174,7 @@
     }
     .fav-grid {
         grid-template-columns: auto auto auto !important;
-        margin-top: -430px;
+        margin-top: auto;
         display: grid;
         scale: 55%;
     }

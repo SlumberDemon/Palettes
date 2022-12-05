@@ -1,9 +1,10 @@
 let colorCards = document.getElementsByClassName("color-card");
-let urlInput = document.getElementById("palette-text");
 let urlCards = document.getElementsByClassName("text-card");
 let favoritesButton = document.getElementById("favorites");
+let paletteText = document.getElementById("palette-text");
 let favoriteButton = document.getElementById("favorite");
 let favButton = document.getElementById("fav-create");
+let title = document.getElementById("menu-title-sec")
 
 // Color Card
 
@@ -39,19 +40,18 @@ favoritesButton.addEventListener("click", () => {
 favButton.addEventListener("click", () => {
     fetch(`/favorites?color1=${urlCards[0].id.replace("#", "")}&color2=${urlCards[1].id.replace("#", "")}&color3=${urlCards[2].id.replace("#", "")}&color4=${urlCards[3].id.replace("#", "")}&color5=${urlCards[4].id.replace("#", "")}`, { method: "POST" })
     favButton.style.background="linear-gradient(#2E3C7B, #665B8A)";
+    favButton.getElementsByTagName("svg")[0].style.fill = "white"
 })
-
 
 // Inputs
 
-urlInput.addEventListener("keypress", async (event) => {
-    let title = document.getElementById("menu-title-sec")
+paletteText.addEventListener("keypress", async (event) => {
     var num = 0
     if (event.key === "Enter") {
         favButton.style.background="transparent";
         title.innerHTML = `...`
         try {
-            let resp  = await fetch(`https://palettes.deta.dev/text/palette?text=${urlInput.value}`)
+            let resp  = await fetch(`https://palettes.deta.dev/text/palette?text=${paletteText.value}`)
             let data = await resp.json()
             for (card of urlCards) {
                 card.innerHTML = data.colors[num]
