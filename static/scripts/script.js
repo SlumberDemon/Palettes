@@ -24,6 +24,25 @@ for (let card of colorCards) {
     })
 }
 
+function GenerateHex(){
+    chars = '0123456789abcdef'
+    var c1 = ""
+    for(i = 0;i < 6;i++){
+        c1 = c1 + chars[Math.floor(Math.random()*16)]
+    }
+    return '#'+c1
+}
+function RefreshPalette(){
+    palette = document.getElementById("PrimaryPalette").getElementsByTagName('div')
+    for (let i = 0;i<palette.length;i++){
+        elem = palette[i]
+        ColorHex = GenerateHex()
+        elem.id = ColorHex
+        elem.style.background = ColorHex
+        elem.innerHTML = ColorHex
+    }
+}
+
 // Buttons
 
 favoriteButton.addEventListener("click", () => {
@@ -66,23 +85,4 @@ paletteText.addEventListener("keypress", async (event) => {
         }
     }
 })
-
-function GenerateHex(){
-    chars = '0123456789abcdef'
-    var c1 = ""
-    for(i = 0;i < 6;i++){
-        c1 = c1 + chars[Math.floor(Math.random()*16)]
-    }
-    return '#'+c1
-}
-function RefreshPalette(){
-    palette = document.getElementById("PrimaryPalette").getElementsByTagName('div')
-    for (let i = 0;i<palette.length;i++){
-        elem = palette[i]
-        ColorHex = GenerateHex()
-        elem.id = ColorHex
-        elem.style.background = ColorHex
-        elem.innerHTML = ColorHex
-    }
-}
 
