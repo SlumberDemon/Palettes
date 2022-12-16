@@ -144,6 +144,41 @@
         margin-right: 620px;
     }
     .menu-bar.favorites > * {
+        margin-right: 325px;
+        margin-left: 320px;
+    }
+    .menu-bar.card {
+        margin-left: 770px;
+    }
+    .menu-bar.pallete > * {
+        margin-right: 280px;
+        margin-left: 275px;
+    }
+    .menu-bar.secondary {
+        margin-right: 170px;
+    }
+    .menu-bar.card.fav {
+        margin-left: 870px;
+    }
+    .color-grid {
+        grid-template-columns: auto auto auto auto auto;
+    }
+    .color-card.favorites {
+        padding: 50px 50px;
+    }
+    .color-card {
+        padding: 150px 50px;
+    }
+    .url-input {
+        width: 875px;
+    }
+} 
+
+@media only screen and (min-width: 1600px) {
+    .menu-text {
+        margin-right: 620px;
+    }
+    .menu-bar.favorites > * {
         margin-right: 350px;
         margin-left: 345px;
     }
@@ -225,6 +260,19 @@ body {
 
 .menu-text {
     font-size: 40px;
+}
+
+.menu-text-thr {
+    border-radius: 8px 8px 0px 0px;
+    background-color: #353535;
+    border: 6px solid #353535;
+    text-align: center;
+    padding: 2px 4px;
+    font-size: 20px;
+}
+
+.color-grid.favorites {
+    border-radius: 0px 0px 8px 8px;
 }
 
 /* Color Containers */

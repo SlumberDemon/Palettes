@@ -48,7 +48,7 @@ function RefreshPalette(){
 // Buttons
 
 favoriteButton.addEventListener("click", () => {
-    fetch(`/favorites?color1=${colorCards[0].id.replace("#", "")}&color2=${colorCards[1].id.replace("#", "")}&color3=${colorCards[2].id.replace("#", "")}&color4=${colorCards[3].id.replace("#", "")}&color5=${colorCards[4].id.replace("#", "")}`, { method: "POST" })
+    fetch(`/favorites?c1=${colorCards[0].id.replace("#", "")}&c2=${colorCards[1].id.replace("#", "")}&c3=${colorCards[2].id.replace("#", "")}&c4=${colorCards[3].id.replace("#", "")}&c5=${colorCards[4].id.replace("#", "")}&prompt=null`, { method: "POST" })
     favoriteButton.style.background="linear-gradient(#2E3C7B, #665B8A)"
     favoriteButton.getElementsByTagName("svg")[0].style.fill = "white"
 })
@@ -59,7 +59,7 @@ favoritesButton.addEventListener("click", () => {
 
 
 favButton.addEventListener("click", () => {
-    fetch(`/favorites?color1=${urlCards[0].id.replace("#", "")}&color2=${urlCards[1].id.replace("#", "")}&color3=${urlCards[2].id.replace("#", "")}&color4=${urlCards[3].id.replace("#", "")}&color5=${urlCards[4].id.replace("#", "")}`, { method: "POST" })
+    fetch(`/favorites?c1=${urlCards[0].id.replace("#", "")}&c2=${urlCards[1].id.replace("#", "")}&c3=${urlCards[2].id.replace("#", "")}&c4=${urlCards[3].id.replace("#", "")}&c5=${urlCards[4].id.replace("#", "")}&prompt=${paletteText.value}`, { method: "POST" })
     favButton.style.background="linear-gradient(#2E3C7B, #665B8A)"
     favButton.getElementsByTagName("svg")[0].style.fill = "white"
 })
@@ -84,8 +84,21 @@ paletteText.addEventListener("keypress", async (event) => {
             title.innerHTML = `Create`
         }
         catch {
-            title.innerHTML = `Error`
-        }
+            title.innerHTML = `!...`
+            try {
+                let resp  = await fetch(`https://palettes.deta.dev/ai/palette?text=${paletteText.value}`)
+                let data = await resp.json()
+                for (card of urlCards) {
+                    card.innerHTML = data.colors[num]
+                    card.style.background = data.colors[num]
+                    card.id = data.colors[num]
+                    num = num + 1
+                }
+                title.innerHTML = `Create`
+            }
+            catch {
+                title.innerHTML = `Error`
+            }
     }
-})
+}})
 

@@ -41,16 +41,17 @@ async def favorites_page(request: fastapi.Request):
 
 
 @app.post("/favorites")
-async def favorites_add(color1, color2, color3, color4, color5):
+async def favorites_add(c1, c2, c3, c4, c5, prompt: str):
     favorites.put(
         {
             "colors": {
-                "1": f"#{color1}",
-                "2": f"#{color2}",
-                "3": f"#{color3}",
-                "4": f"#{color4}",
-                "5": f"#{color5}",
-            }
+                "1": f"#{c1}",
+                "2": f"#{c2}",
+                "3": f"#{c3}",
+                "4": f"#{c4}",
+                "5": f"#{c5}",
+            },
+            "prompt": prompt.replace("null", " "),
         }
     )
     return {"message": "success"}

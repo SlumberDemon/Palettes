@@ -19,6 +19,7 @@
     <div class="fav-grid">
         {% for item in items %}
         <div class="fav-item">
+            <div class="menu-text-thr">{{ item['key'] }} | {{ item['prompt'] }}</div>
             <div id="{{ item['key'] }}" class="color-grid favorites">
                 {% for color in item['colors'].values() %}
                 <div id="{{ color }}" class="color-card favorites">
