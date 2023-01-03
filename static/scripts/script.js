@@ -1,7 +1,9 @@
 palette = document.getElementById("PrimaryPalette").getElementsByTagName('div')
 let colorCards = document.getElementsByClassName("color-card");
 let urlCards = document.getElementsByClassName("text-card");
+let paletteFren = document.getElementById("palette-friend");
 let favoritesButton = document.getElementById("favorites");
+let titletoo = document.getElementById("menu-title-fren");
 let paletteText = document.getElementById("palette-text");
 let favoriteButton = document.getElementById("favorite");
 let favButton = document.getElementById("fav-create");
@@ -102,3 +104,12 @@ paletteText.addEventListener("keypress", async (event) => {
     }
 }})
 
+paletteFren.addEventListener("keypress", async (event) => {
+    if (event.key === "Enter") {
+        titletoo.innerHTML = `...`
+        let resp = await fetch(paletteFren.value)
+        let data = await resp.json()
+        await fetch(`/favorites?c1=${data.colors[1].replace("#", "")}&c2=${data.colors[2].replace("#", "")}&c3=${data.colors[3].replace("#", "")}&c4=${data.colors[4].replace("#", "")}&c5=${data.colors[5].replace("#", "")}&prompt=null`, { method: "POST" })
+        titletoo.innerHTML = `Saved!`
+    }
+})
