@@ -1,4 +1,5 @@
 v: 1
+app_name: Palettes
 icon: ./static/images/discovery.png
 micros:
 - name: palettes 

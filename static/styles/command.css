@@ -1,0 +1,113 @@
+/* Colour */
+
+:root {
+    --bg: #1C1B1C;
+    --be: #353535;
+    --fm: #FFFFFF;
+    --fe: #FFFFFF;
+}
+
+/* Main */
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    left: 0;
+    top: 0;
+}
+
+.command-palette {
+    transform: translate(-50%, -50%); 
+    background-color: transparent;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+    color: var(--fm);
+    position: fixed;
+    display: flex;
+    width: 800px;
+    height: auto; 
+    z-index: 1;
+    left: 50%;
+    top: 50%; 
+}
+
+/* Search */
+
+.command-search {
+    border-radius: 8px 8px 0px 0px;
+    background-color: var(--bg);
+    border: 2px solid var(--be);
+    border-bottom: transparent;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    color: var(--fm);
+    font-size: 16px;
+    margin: 8px 0;
+    display: none;
+    margin: 10px;
+    width: 80%;
+}
+
+.command-search:focus {
+    outline:none;
+}
+
+/* List */
+
+.command-list {
+    height: fit-content !important;
+    border-radius: 0px 0px 8px 8px;
+    transition: height 0.5s ease;
+    background-color: var(--bg);
+    border: 2px solid var(--be);
+    box-sizing: border-box;
+    padding: 0px 20px;
+    font-size: 16px;
+    overflow: auto;
+    display: none;
+    width: 80%;
+}
+
+.command-list div {
+    transition: background-color 0.2s ease;
+    padding: 8px 8px;
+    cursor: pointer;
+    margin: 10px;
+
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    display: flex;
+}
+
+.command-list div:hover {
+    background-color: var(--be);
+    border-radius: 8px;
+}
+
+/* Combined */
+
+.command-list div:hover, .command-list div.selected {
+    background-color: var(--be);
+    border-radius: 8px;
+}
+
+.command-list, .command-search {
+    margin: 0 auto;
+    width: 80%; 
+}
+
+.command-palette .search-bar{
+    width: 200% !important;
+}
+
+/* Unique */
+
+.close-command {
+    color: var(--fe) !important; 
+}

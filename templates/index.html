@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/static/images/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="/static/styles/style.css" />
+    <link rel="stylesheet" href="/static/styles/command.css" />
 </head>
 
 <body>
@@ -63,7 +64,13 @@
     </div>
     <input id="palette-friend" class="url-input" type="text" placeholder="Add others palette using api link"
         autocomplete="off">
+    <div id="command-palette" class="command-palette" style="display: none;">
+        <input type="text" id="command-search" class="command-search" placeholder="Type a command or search">
+        <div class="command-list"></div>
+    </div>
+    <div id="overlay" class="overlay"></div>
 </body>
+<script src="/static/scripts/command.js"></script>
 <script src="/static/scripts/script.js"></script>
 <script src="/static/scripts/feather.js"></script>
 <script>
