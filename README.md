@@ -2,6 +2,7 @@
 🎨 Color creativity 
 
 ## Features
+- Command palette (Cntrl + k)
 - Add your friends Palettes
 - Generate color palettes
 - Text to color palette
