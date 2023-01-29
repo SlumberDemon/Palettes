@@ -152,20 +152,22 @@ document.addEventListener("keydown", function(event) {
 });
 
 document.addEventListener("keydown", function(event) {
-    if (event.key === "ArrowUp") {
-        if (selectedCommandIndex > 0) {
-            selectedCommandIndex--;
-        }
-        updateSelectedCommand();
-        event.preventDefault()
-    } else if (event.key === "ArrowDown") {
-        if (selectedCommandIndex < commands.length - 1) {
-            selectedCommandIndex++;
-        }
-        updateSelectedCommand();
-        event.preventDefault()
-    } else if (event.key === "Enter") {
-        commands[selectedCommandIndex].action();
-        event.preventDefault()
-    } 
+    if (commandPalette.style.display === "block") {
+        if (event.key === "ArrowUp") {
+            if (selectedCommandIndex > 0) {
+                selectedCommandIndex--;
+            }
+            updateSelectedCommand();
+            event.preventDefault()
+        } else if (event.key === "ArrowDown") {
+            if (selectedCommandIndex < commands.length - 1) {
+                selectedCommandIndex++;
+            }
+            updateSelectedCommand();
+            event.preventDefault()
+        } else if (event.key === "Enter") {
+            commands[selectedCommandIndex].action();
+            event.preventDefault()
+        } 
+    }
 });
