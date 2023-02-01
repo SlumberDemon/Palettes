@@ -4,10 +4,12 @@ from extras.palette import palette_main
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 
 app = fastapi.FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"])
 pages = Jinja2Templates(directory="templates")
+app.mount("/static/", StaticFiles(directory="static", html=True))
 
 favorites = Base("favorites")
 
@@ -76,8 +78,3 @@ async def palette_page(request: fastapi.Request, id: str):
 async def palette_api(id: str):
     item = favorites.get(id)
     return item
-
-
-@app.get("/static/{path:path}")
-async def static(path: str):
-    return NoCacheFileResponse(f"./static/{path}")
