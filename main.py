@@ -1,23 +1,17 @@
 import fastapi
 from deta import Base
 from extras.palette import palette_main
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse, FileResponse
-from fastapi.staticfiles import StaticFiles
 
 app = fastapi.FastAPI()
-app.add_middleware(CORSMiddleware, allow_origins=["*"])
 pages = Jinja2Templates(directory="templates")
-app.mount("/static/", StaticFiles(directory="static", html=True))
+app.add_middleware(CORSMiddleware, allow_origins=["*"])
+app.mount("/static/", StaticFiles(directory="static"), name="static")
 
 favorites = Base("favorites")
-
-
-class NoCacheFileResponse(FileResponse):
-    def __init__(self, path: str, **kwargs):
-        super().__init__(path, **kwargs)
-        self.headers["Cache-Control"] = "no-cache"
 
 
 @app.get("/", response_class=HTMLResponse)
