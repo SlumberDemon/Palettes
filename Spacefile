@@ -1,13 +1,15 @@
-v: 1
+v: 0
 app_name: Palettes
 icon: ./static/images/discovery.png
 micros:
-- name: palettes 
-  src: .
-  engine: python3.9
-  public_routes:
-    - "/palette/*" 
-    - "/static/*"
-    - "/api/*"
-  presets:
-    api_keys: true
+  - name: palettes
+    src: .
+    primary: true
+    dev: ./run.sh
+    engine: python3.9
+    public_routes:
+      - "/palette/*"
+      - "/static/*"
+      - "/api/*"
+    presets:
+      api_keys: true
