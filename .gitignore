@@ -1,2 +1,3 @@
 .venv
 .space
+__pycache__
