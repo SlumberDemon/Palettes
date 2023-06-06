@@ -5,8 +5,9 @@ micros:
   - name: palettes
     src: .
     primary: true
-    dev: ./run.sh
+    dev: uvicorn main:app
     run: uvicorn main:app
+    provide_actions: true
     engine: python3.9
     public_routes:
       - "/palette/*"

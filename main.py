@@ -68,7 +68,28 @@ async def palette_page(request: fastapi.Request, id: str):
     )
 
 
+# API
+
+
 @app.get("/api/palette/{id}")
 async def palette_api(id: str):
     item = favorites.get(id)
     return item
+
+
+# App Actions
+
+
+@app.post("/actions/random")
+def random_palette():
+    data = palette_main()
+    return data
+
+
+@app.get("/__space/actions")
+def meta():
+    return {
+        "actions": [
+            {"name": "random", "title": "Random Palette", "path": "/actions/random"},
+        ]
+    }
