@@ -12,6 +12,7 @@ micros:
     public_routes:
       - "/palette/*"
       - "/static/*"
+      - "/image/*"
       - "/api/*"
     presets:
       api_keys: true
