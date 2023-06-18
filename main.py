@@ -74,7 +74,7 @@ async def palette_page(request: fastapi.Request, id: str):
 
 @app.get("/image/{id}")
 async def visualize_palette(id: str):
-    item = favorites.get(id)
+    item = favorites.get(id.removesuffix(".png"))
     image = Image.new("RGB", (1755, 646))
     draw = ImageDraw.Draw(image)
 
