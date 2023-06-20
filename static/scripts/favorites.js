@@ -1,6 +1,7 @@
 let colorCards = document.getElementsByClassName("color-card");
 let deleteButtons = document.getElementsByClassName("delete");
 let shareButtons = document.getElementsByClassName("share");
+let saveButtons = document.getElementsByClassName("save");
 let apiButtons = document.getElementsByClassName("api");
 let homeButton = document.getElementById("home");
 
@@ -61,5 +62,16 @@ for (let button of apiButtons) {
     setTimeout(() => {
       button.style.background = "transparent";
     }, 800);
+  });
+}
+
+for (let button of saveButtons) {
+  button.addEventListener("click", () => {
+    window
+      .open(
+        `${window.location.href.replace("/favorites", "/image")}/${button.id}`,
+        "_blank"
+      )
+      .focus();
   });
 }
