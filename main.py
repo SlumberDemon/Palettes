@@ -162,11 +162,11 @@ async def image_palette(request: fastapi.Request):
     host = os.getenv("DETA_SPACE_APP_HOSTNAME")
     onspace = os.getenv("DETA_SPACE_APP")
     protocol = "https://" if onspace else "http://"
-
-    return fastapi.Response(
-        f"{protocol}{host}/image/{res['id']}.png",
-        media_type="text/plain",
-    )
+    return {
+        "url": f"{protocol}{host}/image/{res['id']}.png",
+        "type": "image",
+        "name": "palette.png",
+    }
 
 
 @app.get("/__space/actions")
@@ -191,6 +191,7 @@ async def meta():
                 "title": "Image Palette",
                 "path": "/actions/image",
                 "input": [{"name": "id", "type": "string"}],
+                "output": "@deta/file",
             },
         ]
     }
